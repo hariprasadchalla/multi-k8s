@@ -10,6 +10,7 @@ docker push stephengrider/multi-client:$SHA
 docker push stephengrider/multi-server:$SHA
 docker push stephengrider/multi-worker:$SHA
 
+
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=stephengrider/multi-server:$SHA
 kubectl set image deployments/client-deployment client=stephengrider/multi-client:$SHA
